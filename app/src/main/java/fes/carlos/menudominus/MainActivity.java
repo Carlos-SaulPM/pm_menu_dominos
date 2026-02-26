@@ -1,7 +1,7 @@
 package fes.carlos.menudominus;
 
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,9 +12,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView[] imagenesView = new ImageView[7];
+    ImageButton[] imagenesBotones = new ImageButton[7];
     String baseUrl = "https://595z7z9r-3000.usw3.devtunnels.ms/images/menus/";
-    String urlsImagenes[] = {
+    String[] urlsImagenes = {
             "buildYourOwnPizza.jpg",
             "pizza.png",
             "breads.png",
@@ -34,15 +34,15 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        imagenesView[0] = findViewById(R.id.imageViewBuildYourOwnPizza);
-        imagenesView[1] = findViewById(R.id.imageViewPizzas);
-        imagenesView[2] = findViewById(R.id.imageViewEntradas);
-        imagenesView[3] = findViewById(R.id.imageViewPollo);
-        imagenesView[4] = findViewById(R.id.imageViewPostres);
-        imagenesView[5] = findViewById(R.id.imageViewBebidas);
-        imagenesView[6] = findViewById(R.id.imageViewSalsas);
+        imagenesBotones[0] = findViewById(R.id.imageButtonBuildYourOwnPizza);
+        imagenesBotones[1] = findViewById(R.id.imageButtonPizzas);
+        imagenesBotones[2] = findViewById(R.id.imageButtonEntradas);
+        imagenesBotones[3] = findViewById(R.id.imageButtonPollo);
+        imagenesBotones[4] = findViewById(R.id.imageButtonPostres);
+        imagenesBotones[5] = findViewById(R.id.imageButtonBebidas);
+        imagenesBotones[6] = findViewById(R.id.imageButtonSalsas);
         for (int i = 0; i<=6; i++) {
-            Glide.with(this).load(baseUrl+urlsImagenes[i]).into(imagenesView[i]);
+            Glide.with(this).load(baseUrl+urlsImagenes[i]).into(imagenesBotones[i]);
         }
     }
 

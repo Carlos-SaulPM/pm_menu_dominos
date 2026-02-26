@@ -7,12 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageViewSalsas"
+    <ImageButton
+        android:id="@+id/imageButtonSalsas"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="572dp"
+        android:background="?attr/selectableItemBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -29,14 +30,15 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewSalsas" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonSalsas" />
 
-    <ImageView
-        android:id="@+id/imageViewPostres"
+    <ImageButton
+        android:id="@+id/imageButtonPostres"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="416dp"
+        android:background="?attr/selectableItemBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -53,14 +55,15 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewPostres" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonPostres" />
 
-    <ImageView
-        android:id="@+id/imageViewBebidas"
+    <ImageButton
+        android:id="@+id/imageButtonBebidas"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginTop="416dp"
         android:layout_marginEnd="25dp"
+        android:background="?attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -77,14 +80,15 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewBebidas" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonBebidas" />
 
-    <ImageView
-        android:id="@+id/imageViewPizzas"
+    <ImageButton
+        android:id="@+id/imageButtonPizzas"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginTop="73dp"
         android:layout_marginEnd="25dp"
+        android:background="?attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -102,12 +106,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
 
-    <ImageView
-        android:id="@+id/imageViewBuildYourOwnPizza"
+    <ImageButton
+        android:id="@+id/imageButtonBuildYourOwnPizza"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="73dp"
+        android:background="?attr/selectableItemBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -124,7 +129,7 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewPizzas" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonPizzas" />
 
     <TextView
         android:id="@+id/textView8"
@@ -138,36 +143,26 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewBuildYourOwnPizza" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonBuildYourOwnPizza" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Menú"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
-
-    <ImageView
-        android:id="@+id/imageViewEntradas"
+    <ImageButton
+        android:id="@+id/imageButtonEntradas"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="244dp"
+        android:background="?attr/selectableItemBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <ImageView
-        android:id="@+id/imageViewPollo"
+    <ImageButton
+        android:id="@+id/imageButtonPollo"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginTop="244dp"
         android:layout_marginEnd="25dp"
+        android:background="?attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -184,7 +179,7 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewEntradas" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonEntradas" />
 
     <TextView
         android:id="@+id/textViewPollo"
@@ -198,6 +193,6 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewPollo" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonPollo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
