@@ -1,8 +1,6 @@
-package fes.carlos.menudominus;
+package fes.carlos.menudominus.activities;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,29 +8,25 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.bumptech.glide.Glide;
+import fes.carlos.menudominus.R;
+import fes.carlos.menudominus.controllers.PizzasController;
 
-import fes.carlos.menudominus.activities.PizzasActivity;
-import fes.carlos.menudominus.controllers.MenuController;
+public class PizzasActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
-    private MenuController menuController = new MenuController(this);
-
+    PizzasController pizzasController = new PizzasController(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_pizzas);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        menuController.inicializarMenu();
+        pizzasController.inicializarPizzas();
+
     }
 
-    public void irAPizzas(View view){
-        menuController.cambiarDeActividad(PizzasActivity.class);
-    }
 
 }
