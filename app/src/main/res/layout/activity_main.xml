@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/imageButtonPizza7"
+        android:id="@+id/imageButtonSalsas"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginStart="25dp"
@@ -30,10 +30,10 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonPizza7" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonSalsas" />
 
     <ImageButton
-        android:id="@+id/imageButtonPizza5"
+        android:id="@+id/imageButtonPostres"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginStart="25dp"
@@ -55,10 +55,10 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonPizza5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonPostres" />
 
     <ImageButton
-        android:id="@+id/imageButtonPizza6"
+        android:id="@+id/imageButtonBebidas"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginTop="416dp"
@@ -80,10 +80,10 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonPizza6" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonBebidas" />
 
     <ImageButton
-        android:id="@+id/imageButtonPizza2"
+        android:id="@+id/imageButtonPizzas"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginTop="73dp"
@@ -108,7 +108,7 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <ImageButton
-        android:id="@+id/imageButtonPizza1"
+        android:id="@+id/imageButtonBuildYourOwnPizza"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginStart="25dp"
@@ -130,7 +130,7 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonPizza2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonPizzas" />
 
     <TextView
         android:id="@+id/textView8"
@@ -144,10 +144,10 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonPizza1" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonBuildYourOwnPizza" />
 
     <ImageButton
-        android:id="@+id/imageButtonPizza3"
+        android:id="@+id/imageButtonEntradas"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginStart="25dp"
@@ -158,7 +158,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
-        android:id="@+id/imageButtonPizza4"
+        android:id="@+id/imageButtonPollo"
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginTop="244dp"
@@ -180,7 +180,7 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonPizza3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonEntradas" />
 
     <TextView
         android:id="@+id/textViewPollo"
@@ -194,6 +194,6 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonPizza4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonPollo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

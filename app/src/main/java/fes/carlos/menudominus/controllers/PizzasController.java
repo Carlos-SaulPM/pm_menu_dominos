@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
+import fes.carlos.menudominus.R;
 import fes.carlos.menudominus.models.ImagenModel;
 import fes.carlos.menudominus.services.DominosService;
 
@@ -49,7 +50,7 @@ public class PizzasController {
 
 
     private void pintarImageButton(String urlImagen, ImageButton imageButton){
-        String urlCompleta = DominosService.BASE_URL +"pizzas/"+ urlImagen;
+        String urlCompleta = DominosService.BASE_URL +"/pizzas/"+ urlImagen;
         Glide.with(activity)
                 .load(urlCompleta)
                 .into(imageButton);

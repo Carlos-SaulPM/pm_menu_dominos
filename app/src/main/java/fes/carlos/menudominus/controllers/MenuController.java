@@ -62,7 +62,7 @@ public class MenuController {
     }
 
     private void pintarImageButton(String urlImagen, ImageButton imageButton){
-        String urlCompleta = DominosService.BASE_URL +"/menus/"+ urlImagen;
+        String urlCompleta = DominosService.BASE_URL + "/menus/"+urlImagen;
         Glide.with(activity)
                 .load(urlCompleta)
                 .into(imageButton);
