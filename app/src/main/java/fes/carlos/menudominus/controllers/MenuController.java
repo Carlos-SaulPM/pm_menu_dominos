@@ -1,71 +1,70 @@
 package fes.carlos.menudominus.controllers;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.widget.ImageButton;
-
-import androidx.annotation.IdRes;
 
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import fes.carlos.menudominus.models.ImagenModel;
+import fes.carlos.menudominus.R;
 import fes.carlos.menudominus.models.ManejadorDeActividadesModel;
-import fes.carlos.menudominus.services.DominosService;
+import fes.carlos.menudominus.models.MenuItemModel;
+import fes.carlos.menudominus.services.ApiCallback;
+import fes.carlos.menudominus.services.MenuService;
 
 public class MenuController {
     private Activity activity;
-    private ManejadorDeActividadesModel manejadorDeActividadesMenu;
-    private List<ImagenModel> imagenes = new ArrayList<>();
+    private ManejadorDeActividadesModel manejadorDeActividades;
+    private MenuService menuService;
+    private Map<String, Integer> mapeoCategorias;
 
     public MenuController(Activity activity) {
         this.activity = activity;
-        this.manejadorDeActividadesMenu = new ManejadorDeActividadesModel(activity);
-        cargarImagenesDelMenu();
+        this.manejadorDeActividades = ManejadorDeActividadesModel.getInstancia();
+        this.manejadorDeActividades.setActivity(activity);
+        this.menuService = new MenuService();
+        inicializarMapeo();
     }
 
-    private void cargarImagenesDelMenu(){
-        imagenes.add(new ImagenModel("buildYourOwnPizza.jpg", "imageButtonBuildYourOwnPizza"));
-        imagenes.add(new ImagenModel("pizza.png", "imageButtonPizzas"));
-        imagenes.add(new ImagenModel("breads.png", "imageButtonEntradas"));
-        imagenes.add(new ImagenModel("chicken.png", "imageButtonPollo"));
-        imagenes.add(new ImagenModel("dessert.png", "imageButtonPostres"));
-        imagenes.add(new ImagenModel("drinks.png", "imageButtonBebidas"));
-        imagenes.add(new ImagenModel("salsas.jpg", "imageButtonSalsas"));
+    private void inicializarMapeo() {
+        mapeoCategorias = new HashMap<>();
+        mapeoCategorias.put("pizzas", R.id.imageButtonPizzas);
+        mapeoCategorias.put("pollo", R.id.imageButtonPollo);
+        mapeoCategorias.put("adicionales", R.id.imageButtonEntradas);
+        mapeoCategorias.put("adicionesles", R.id.imageButtonEntradas);
+        mapeoCategorias.put("bebidas", R.id.imageButtonBebidas);
+        mapeoCategorias.put("postres", R.id.imageButtonPostres);
     }
-
-
 
     public void inicializarMenu() {
-
-        for (ImagenModel imagenModel:
-             imagenes) {
-            int resId = activity.getResources().getIdentifier(
-                    imagenModel.getIdDeLaImagen(),
-                    "id",
-                    activity.getPackageName());
-            ImageButton imagenButton = activity.findViewById(resId);
-            if(imagenButton != null){
-                pintarImageButton(imagenModel.getNombreImagen(), imagenButton);
+        menuService.obtenerMenu(new ApiCallback<List<MenuItemModel>>() {
+            @Override
+            public void onSuccess(List<MenuItemModel> data) {
+                for (MenuItemModel item : data) {
+                    Integer resId = mapeoCategorias.get(item.getTitulo().toLowerCase());
+                    if (resId != null) {
+                        ImageButton imageButton = activity.findViewById(resId);
+                        if (imageButton != null) {
+                            String urlCompleta = "https://utilidades.vmartinez84.xyz" + item.getRuta();
+                            Glide.with(activity)
+                                    .load(urlCompleta)
+                                    .into(imageButton);
+                        }
+                    }
+                }
             }
 
-        }
+            @Override
+            public void onError(String error) {
+                android.util.Log.e("MenuController", error);
+            }
+        });
     }
 
-    public void cambiarDeActividad(Class<?> claseDeActividadACambiar){
-        manejadorDeActividadesMenu.cambiarDeActividad(claseDeActividadACambiar);
+    public void cambiarDeActividad(Class<?> claseDeActividadACambiar) {
+        manejadorDeActividades.cambiarDeActividad(claseDeActividadACambiar);
     }
-
-    private void pintarImageButton(String urlImagen, ImageButton imageButton){
-        String urlCompleta = DominosService.BASE_URL + "/menus/"+urlImagen;
-        Glide.with(activity)
-                .load(urlCompleta)
-                .into(imageButton);
-    }
-
 }

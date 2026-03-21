@@ -8,8 +8,18 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="/mnt/sda1/Documentos/semestre_2026_2/programacion_movil/AppsDePrueba/Dominos" />
+            <option value="/mnt/sda1/Documentos/semestre_2026_2/programacion_movil/AppsDePrueba/Dominos/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="testRunner" value="CHOOSE_PER_TEST" />
+        <option name="externalProjectPath" value="/mnt/sda1/Documentos/semestre_2026_2/programacion_movil/AppsDePrueba/Dominos" />
+        <option name="modules">
+          <set>
+            <option value="/mnt/sda1/Documentos/semestre_2026_2/programacion_movil/AppsDePrueba/Dominos" />
+            <option value="/mnt/sda1/Documentos/semestre_2026_2/programacion_movil/AppsDePrueba/Dominos/app" />
           </set>
         </option>
       </GradleProjectSettings>
